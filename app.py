@@ -4,6 +4,31 @@ import sqlite3
 from datetime import datetime, timedelta
 import bcrypt
 
+# ====================== STREAMLIT SAYFA AYARLARI ======================
+st.set_page_config(
+    page_title="TOKER HUKUK BÜROSU",
+    page_icon="⚖️",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': "TOKER HUKUK BÜROSU Otomasyon Sistemi"
+    }
+)
+
+# Sağ üstteki butonları (Share, Deploy vb.) gizle
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display:none;}
+    .css-1v3fvcr {display:none;}  /* Ekstra menü öğeleri */
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # ====================== OTURUM YÖNETİMİ ======================
 def init_session_state():
     if 'logged_in' not in st.session_state:
