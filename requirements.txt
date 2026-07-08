@@ -1,6 +1,4 @@
 streamlit
 pandas
-sqlite3
 bcrypt
 plotly
-streamlit-calendar
